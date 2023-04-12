@@ -14,8 +14,8 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 
-const pages = ['Home', 'Join Game', 'Create Game'];
-const settings = ['Profile', 'Account', 'Dashboard'];
+const pages = ['Home', 'Start Workout', 'Create Workout'];
+const settings = ['Profile'];
 
 function ResponsiveAppBar({ setMenuOption }) {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -54,7 +54,7 @@ function ResponsiveAppBar({ setMenuOption }) {
 
                 navigate('/');
             }
-            else if (page.toLocaleLowerCase() === 'create game') {
+            else if (page.toLocaleLowerCase() === 'start workout') {
 
                 navigate('/create');
             }
@@ -62,7 +62,7 @@ function ResponsiveAppBar({ setMenuOption }) {
 
                 navigate('/join');
             }
-            else if (page.toLocaleLowerCase() === 'join game') {
+            else if (page.toLocaleLowerCase() === 'create workout') {
                 if (localStorage.user == '') {
                     navigate('/join');
                 }
@@ -76,7 +76,6 @@ function ResponsiveAppBar({ setMenuOption }) {
         <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <QuestionMarkIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
                     <Typography
                         variant="h6"
                         noWrap
@@ -92,7 +91,7 @@ function ResponsiveAppBar({ setMenuOption }) {
                             textDecoration: 'none',
                         }}
                     >
-                        inQUIZitive
+                        Gym Trkr
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
@@ -130,7 +129,6 @@ function ResponsiveAppBar({ setMenuOption }) {
                             ))}
                         </Menu>
                     </Box>
-                    <QuestionMarkIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
                     <Typography
                         variant="h5"
                         noWrap
@@ -147,7 +145,7 @@ function ResponsiveAppBar({ setMenuOption }) {
                             textDecoration: 'none',
                         }}
                     >
-                        inQUIZitive
+                        Gym Trkr
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
