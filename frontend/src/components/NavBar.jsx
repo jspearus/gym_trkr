@@ -12,9 +12,8 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 
-const pages = ['Home', 'Start Workout', 'Create Workout'];
+const pages = ['Home', 'Start Workout', 'Create Exercize'];
 const settings = ['Profile'];
 
 function ResponsiveAppBar({ setMenuOption }) {
@@ -56,19 +55,19 @@ function ResponsiveAppBar({ setMenuOption }) {
             }
             else if (page.toLocaleLowerCase() === 'start workout') {
 
-                navigate('/create');
+                navigate('/start');
             }
             else if (page.toLocaleLowerCase() === 'profile') {
 
-                navigate('/join');
+                navigate('/profile');
             }
-            else if (page.toLocaleLowerCase() === 'create workout') {
-                if (localStorage.user == '') {
-                    navigate('/join');
-                }
-                else {
-                    navigate('/question');
-                }
+            else if (page.toLocaleLowerCase() === 'create exercize') {
+                navigate('/create');
+                // if (localStorage.user == '') {
+                // }
+                // else {
+                //     navigate('/question');
+                // }
             }
         }
     }, [page, navigate]);
